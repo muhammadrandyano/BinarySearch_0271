@@ -26,3 +26,31 @@ void input() {
         cin >> element[i];
     }
 }
+
+void bubbleSortArray() {
+    int pass = 1;
+    do {
+        for (int j = 0; j <= npanjang - 1 - pass; j++) {
+            if (element[j] > element[j + 1]) {
+                int temp = element[j];
+                element[j] = element[j + 1];
+                element[j + 1] = temp;
+            }
+        }
+        pass = pass + 1;
+    } while (pass <= npanjang - 1);
+}
+
+void display() {
+    cout << endl;
+    cout << "=================================" << endl;
+    cout << "Elemen Array yang telah tersusun" << endl;
+    cout << "=================================" << endl;
+    for (int j = 0; j < npanjang; j++) {
+        cout << element[j];
+        if (j < npanjang - 1) {
+            cout << " --> ";
+        }
+    }
+    cout << endl;
+}
